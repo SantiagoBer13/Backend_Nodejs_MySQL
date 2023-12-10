@@ -4,12 +4,6 @@ import { getEmployee, getEmployees, createEmployee, updateEmployee, deleteEmploy
 
 const router = Router();
 
-router.get("/sql", async (req, res) => {
-    const query = await pool.query("SELECT * FROM employee;")
-    //res.send(query)
-    res.json(query[0])
-})
-
 router.get("/employees", getEmployees)
 
 router.get("/employees/:id", getEmployee)
